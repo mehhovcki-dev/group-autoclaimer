@@ -106,4 +106,7 @@ signal.signal(signal.SIGINT, handle_interrupt)
 signal.signal(signal.SIGTERM, handle_interrupt)
 
 threading.Thread(target=update_headers).start()
-client.run(discord["token"])#, log_handler=)
+if settings["logging"]["discordHandler"]:
+    client.run(discord["token"])
+else:
+    client.run(discord["token"], log_handler=None)
