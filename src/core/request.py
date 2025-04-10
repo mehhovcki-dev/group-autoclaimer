@@ -26,13 +26,10 @@ async def return_token(cookie):
 
     async with aiohttp.ClientSession() as session:
         while True:
-            response = await session.get("https://www.roblox.com/home/", headers=headers)
-            if response.status == 200:
-                content = await response.text()
-                token = regex.search(r'(?<=data-token=").[^"]*', content).group(0)
-                if token != None:
-                    headers["x-csrf-token"] = token
-                    return headers
+            response = await session.post("https://auth.roblox.com/v2/logout", headers=headers)
+            if response.headers.get("x-csrf-token") != None:
+                headers["x-csrf-token"] = response.headers.get("x-csrf-token")
+                return headers
 
 async def leave_groups(user_id, cookie):
     async with aiohttp.ClientSession() as session:
