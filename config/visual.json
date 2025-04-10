@@ -1,0 +1,110 @@
+{
+    "console": {
+        "text": {
+            "consoleTime": false,
+            "timeFormat": "12h",
+            "alignment": "center"
+        },
+        "logo": {
+            "ascii": true,
+            "font": "elite",
+            "text": "mehhovcki autoclaimer"
+        },
+        "colors": {
+            "gradient": true,
+            "info": {
+                "color1": "#7d49d6",
+                "color2": "#9214e0"
+            },
+            "warn": {
+                "color1": "#ebcb86",
+                "color2": "#cfc655"
+            },
+            "error": {
+                "color1": "#fa8073",
+                "color2": "#c4493b"
+            },
+            "debug": {
+                "color1": "#74f7a4",
+                "color2": "#1f8c54"
+            },
+            "critical": {
+                "color1": "#ff0000",
+                "color2": "#e00404"
+            }
+        }
+    },
+    "webhook": {
+      "notifyOnlyClaim": true,
+      "account": {
+        "logging": {
+            "loaded": {"content": "succesfully loaded in `{time}` seconds as **{name}** *({id})* in `{time}`!"},
+            "switch": {"content": "choosen **{name}** *({id})* as account to claim groups!"}
+        },
+        "claim": {
+            "success": {"content": "succesfully **claimed** [{group_id}]({link}) in `{time}` seconds!"},
+            "fail": {"content": "succesfully **failed** [{group_id}]({link}) in `{time}` seconds, because `{status}`. :("}
+        },
+        "detection": {
+            "content": "finished detection in {detect_time} seconds!",
+            "embeds": [
+              {
+                "id": 523089291,
+                "description": "claimed it in `{claim_time}`. [click here to open group]({link})",
+                "fields": [
+                  {
+                    "id": 468081996,
+                    "name": "members",
+                    "value": "{members}",
+                    "inline": true
+                  },
+                  {
+                    "id": 338013268,
+                    "name": "robux",
+                    "value": "{robux}",
+                    "inline": true
+                  },
+                  {
+                    "id": 961166720,
+                    "name": "pending",
+                    "value": "{pending}",
+                    "inline": true
+                  },
+                  {
+                    "id": 370813069,
+                    "name": "clothing",
+                    "value": "{clothing}",
+                    "inline": true
+                  },
+                  {
+                    "id": 457772376,
+                    "name": "games (visits)",
+                    "value": "{games} ({visits})",
+                    "inline": true
+                  },
+                  {
+                    "id": 575047693,
+                    "name": "ugc",
+                    "value": "{ugc}",
+                    "inline": true
+                  }
+                ],
+                "title": "succesfully claimed **`{group_id}`**!",
+                "thumbnail": {
+                  "url": "https://cdn.pfps.gg/pfps/5771-furry-5.png"
+                },
+                "footer": {
+                  "text": "made with ❤️ by mehhovcki",
+                  "icon_url": "https://avatars.githubusercontent.com/u/145855444?v=4"
+                },
+                "timestamp": "2024-12-06T21:00:00.000Z",
+                "color": 16140360
+              }
+            ],
+            "components": [],
+            "actions": {}
+          }
+      }  
+    },
+    "crqzy": "is a cutie :333 mwah"
+}

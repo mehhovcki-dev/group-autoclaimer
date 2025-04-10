@@ -1,0 +1,6 @@
+git+https://github.com/1Danish-00/selfcord.py@815698d9a1216cc07d6d125d8d05b3027f19f52e
+bs4
+pyfiglet
+rgbprint
+curl_cffi
+Brotli
