@@ -22,7 +22,7 @@ so, if this is still **isn't enough for you** to switch to mehhovcki v6, i don't
 ## help and guides
 need help? our [wiki](https://github.com/mehh0vcki/group-autoclaimer/wiki) has easy setup instructions and answers to most questions. 
 
-stuck on something not in the wiki? [open an issue](https://github.com/mehh0vcki/group-autoclaimer/issues) and describe your problem. the more details you share, the faster we can help you fix it!
+stuck on something not in the wiki? [open an issue](https://github.com/mehh0vcki/group-autoclaimer/issues), or [join our discord server](https://discord.gg/PpWtspaCfh) and describe your problem. the more details you share, the faster we can help you fix it!
 
 
 <div align="center">
