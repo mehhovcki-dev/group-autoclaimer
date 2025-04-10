@@ -61,7 +61,7 @@ def validate_settings(content: str):
         if 'proxies' in proxies:
             if not isinstance(proxies['proxies'], dict):
                 errors.append("Proxies must be a dictionary")
-            if proxies['proxies']:
+            if proxies['proxies'] == True:
                 if 'http' not in proxies['proxies'] or not proxies['proxies']['http']:
                     errors.append("HTTP proxy cannot be empty")
                 if 'https' not in proxies['proxies'] or not proxies['proxies']['https']:
