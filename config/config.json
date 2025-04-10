@@ -1,0 +1,40 @@
+{
+    "discord": {
+        "token": "",
+        "prefix": "!",
+        "trust": [],
+        "trustOwnerCommands": true
+    },
+    "autoclaim": {
+        "channels": [],
+        "webhooks": [""],
+        "shouts": true,
+        "shoutsList": [
+            "using mehhovcki group autoclaimer v6!",
+            "mehhovcki autoclaimer v6, made with love by mehhovcki",
+            "mehhovcki created this autoclaimer :3"
+        ]
+    },
+    "proxies": {
+        "enabled": false,
+        "proxies": {
+            "http": "",
+            "https": ""
+        }
+    },
+    "detections": {
+        "funds": 5,
+        "pending": 5,
+        "members": 1000,
+        "clothing": 5,
+        "games": 5,
+        "visits": 10000,
+        "ugc": 1
+    },
+    "logging": {
+        "enable": true,
+        "accountSwitch": true,
+        "claimData": true,
+        "discordHandler": true
+    }
+}
