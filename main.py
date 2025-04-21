@@ -52,7 +52,7 @@ async def on_message(message: selfcord.Message):
             settings["proxies"]["enabled"] and settings["proxies"]["proxies"] or {})
 
             if data["join"]["status"] != 200:
-                if data["join"]["status"] == 429 or data["join"]["status"] == 401:
+                if data["join"]["status"] == 429 or data["join"]["status"] == 401 or data["join"]["status"] == 403:
                     log_info("switching account", "warn")
                     headers, account_data, trash = await switch()
                     headers = await return_token(account_data["cookie"])
