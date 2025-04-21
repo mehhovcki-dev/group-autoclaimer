@@ -52,7 +52,7 @@ async def on_message(message: selfcord.Message):
             settings["proxies"]["enabled"] and settings["proxies"]["proxies"] or {})
 
             if data["join"]["status"] != 200:
-                if data["join"]["status"] == 429 or data["join"]["status"] == 401 or data["join"]["status"] == 403:
+                if data["join"]["status"] == 429 or data["join"]["status"] == 401:
                     log_info("switching account", "warn")
                     headers, account_data, trash = await switch()
                     headers = await return_token(account_data["cookie"])
@@ -88,10 +88,13 @@ os.system("cls" if os.name == "nt" else "clear")
 introduction(visual, account_data["displayName"], account_data["id"], account_data["time"], len(discord["trust"]), len(autoclaim["channels"]))
 asyncio.run(leave_groups(account_data["id"], headers.get("Cookie").split(".ROBLOSECURITY=")[1].split(";")[0]))
 
-isUpdated = asyncio.run(verify_version())
+isUpdated, latest_changes = verify_version()
 if not isUpdated:
     log_info("[!] WARNING, PLEASE TAKE ATTENTION! your version of mehhovcki autoclaimer v6 is out-of-date.", "warn")
+    for item in latest_changes:
+        log_info(item, "warn")
     log_info("[!] please, visit [https://github.com/mehhovcki-dev/group-autoclaimer] to download the latest version.", "warn")
+
 
 def handle_interrupt(signum, frame):
     log_info("exiting...", "info")
