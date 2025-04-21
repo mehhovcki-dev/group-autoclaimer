@@ -1,4 +1,4 @@
 1.0.1
 
-# new version thingy yah uh huh
-# go update or smth
+# updated versioning
+# probaly fixed claimer not switching whenever account is max
