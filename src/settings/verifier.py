@@ -1,37 +1,18 @@
-import os
-from aiosonic import HTTPClient, HttpResponse
+import requests
 
-async def verify_version():
-    headers={
-        "Accept": "application/vnd.github.v3+json",
-        "X-GitHub-Api-Version": "2022-11-28"
-    }
+def verify_version():
+    try:
+        request = requests.get("https://raw.githubusercontent.com/mehhovcki-dev/group-autoclaimer/refs/heads/main/config/version.txt")
+        if request.status_code == 200:
+            latest_version = request.text.split("\n")[0]
+            change_log = request.text.split("\n")[1:]
 
-    client = HTTPClient()
-    response: HttpResponse = await client.get(
-        "https://api.github.com/repos/mehhovcki-dev/mehhovcki-autoclaimer/branches/main", 
-        headers=headers
-    )
+            with open("config/version.txt", "r") as file:
+                current_version = file.read().split("\n")[0]
 
-    if response.ok:
-        latest_github_version = response.json()['commit']['sha']
-    else:
-        return False
-    
-    if os.path.exists("config/version.txt"):
-        with open("config/version.txt", "r") as f:
-            current_version = f.read()
-    else:
-        return False
-
-    if current_version != "":
-        if current_version == latest_github_version:
-            return True
-        else:
-            return False
-    else:
-        f.close()
-        with open("config/version.txt", "w") as f:
-            f.write(latest_github_version)
-
-        return True
+            if latest_version != current_version:
+                return False, change_log
+    except Exception as e:
+        print(e)
+        pass
+    return True, ""
