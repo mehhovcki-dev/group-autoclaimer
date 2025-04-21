@@ -15,7 +15,10 @@ async def send_webhook(data: dict):
 
     async with aiohttp.ClientSession() as session:
         for webhook in webhooks:
-            await session.post(webhook, json=data)
+            if webhook != "" and webhook.startswith("http") or webhook.startswith("https"):
+                await session.post(webhook, json=data)
+            else:
+                print(f"[ALERT] invalid webhook: {webhook}")
 
 async def return_token(cookie):
     headers = {
