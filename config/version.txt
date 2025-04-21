@@ -2,3 +2,4 @@
 
 # updated versioning
 # probaly fixed claimer not switching whenever account is max
+# fixed bug with webhooks
